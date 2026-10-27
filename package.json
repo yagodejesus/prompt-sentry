@@ -1,0 +1,56 @@
+{
+  "name": "prompt-sentry",
+  "version": "0.1.0",
+  "description": "Detect and strip prompt injection hidden in untrusted text before it reaches your LLM agent: invisible Unicode (tag smuggling, zero-width, variation selectors), hidden HTML, exfiltration URLs, encoded payloads and instruction phrases in EN/PT/ES. Zero dependencies.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "prompt-sentry": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "prompt-injection",
+    "llm",
+    "ai-security",
+    "agents",
+    "sanitize",
+    "unicode",
+    "ascii-smuggling",
+    "rag",
+    "security"
+  ],
+  "author": "Yago de Jesus Martins",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yagodejesus/prompt-sentry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yagodejesus/prompt-sentry/issues"
+  },
+  "homepage": "https://github.com/yagodejesus/prompt-sentry#readme",
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3"
+  }
+}
